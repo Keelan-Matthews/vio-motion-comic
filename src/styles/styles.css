@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: 1800px;
+  height: 900px;
+  background-color: white;
+}
+
+.main {
+  background-color: grey;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.d-flex {
+  display: flex;
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    transform: translateX(1700px);
+  }
+  100% {
+    transform: translateX(-1700px);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1700px);
+  }
+  100% {
+    transform: translateX(-1700px);
+  }
+}
+@-webkit-keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+.page-1 {
+  transition: all 2s ease;
+}
+
+#panel-1 {
+  -webkit-animation: slide-in-right 5s cubic-bezier(0, 0.83, 1, 0.15) both;
+          animation: slide-in-right 5s cubic-bezier(0, 0.83, 1, 0.15) both;
+}/*# sourceMappingURL=styles.css.map */
