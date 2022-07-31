@@ -6,4 +6,13 @@
 
 body {
   overflow-x: hidden;
+}
+
+.canvas-pg-1 canvas {
+  height: 414px;
+}
+
+.bubbles {
+  position: absolute;
+  z-index: 30;
 }/*# sourceMappingURL=styles.css.map */
