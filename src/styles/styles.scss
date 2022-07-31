@@ -16,3 +16,11 @@ body {
     position: absolute;
     z-index: 30;
 }
+
+html {
+    scroll-snap-type: y proximity;
+}
+
+.snap-child {
+    scroll-snap-align: center;
+}

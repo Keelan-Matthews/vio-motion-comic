@@ -8,14 +8,24 @@ export default function SlideLeft({ img, delayNum, isRive }) {
     if (delayNum === undefined)
         delayNum = 0;
 
+    if (isRive === undefined)
+        isRive = false;
+
     const [ref, inView] = useInView({
         threshold: 1,
         rootMargin: '500px 0px 0px 0px'
     });
+
+    const { rive, RiveComponent} = useRive({
+        src: img,
+        autoplay: true,
+        animations: "anim"
+    })
+
     useEffect(() => {
         if (inView) {
-            if (isRive)
-                rive.play()
+            // if (isRive) 
+            //     rive.play()
                 
             controls.start({
                 x: 0,
@@ -31,12 +41,6 @@ export default function SlideLeft({ img, delayNum, isRive }) {
             controls.start({ x: '-100vw' });
         }
     }, [inView]);
-
-    const { rive, RiveComponent} = useRive({
-        src: img,
-        autoplay: false,
-        animations: "restart"
-    })
 
     return (
         <div ref={ref} className="canvas-pg-1">
