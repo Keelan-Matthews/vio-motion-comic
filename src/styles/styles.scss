@@ -9,10 +9,22 @@ body {
 }
 
 .canvas-pg-1 canvas {
-    height: 414px;
+    height: 409px;
+}
+
+.panel-0 canvas {
+    height: 580px;
 }
 
 .bubbles {
     position: absolute;
     z-index: 30;
+}
+
+.hover:hover {
+    transform: scale(1.008);
+}
+
+.hover {
+    transition: all 0.2s ease;
 }

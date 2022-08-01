@@ -7,6 +7,7 @@ import SlideLeft from './animations/SlideLeft';
 import Appear from './animations/Appear';
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Rive from "rive-react"
 
 export default function PageOne() {
     const controls = useAnimation();
@@ -22,7 +23,7 @@ export default function PageOne() {
                 x: 0,
                 transition: {
                     type: 'spring',
-                    duration: 1,
+                    duration: 0.6,
                     bounce: 0.2
                 }
             });
@@ -34,8 +35,10 @@ export default function PageOne() {
 
     return (
         <Container fluid className="my-5 py-5">
-            <Row className="my-2">
-                <img src="page1/panel-1.png" alt="" />
+            <Row className="my-2 hover">
+                <div style={{border: '8px solid #354856'}} className="panel-0">
+                    <Rive src="page1/panel-1.riv"/>
+                </div>
             </Row>
             <Row className="d-flex">
                 <Col lg="7" className="canvas-pg-1">

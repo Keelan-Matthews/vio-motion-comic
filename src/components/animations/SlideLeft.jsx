@@ -47,7 +47,7 @@ export default function SlideLeft({ img, delayNum, isRive }) {
     }, [inView, rive]);
 
     return (
-        <div ref={ref}>
+        <div ref={ref} className="hover">
             <motion.div animate={controls} style={{border: '8px solid #354856'}}>
                 {isRive 
                     ? <RiveComponent />
