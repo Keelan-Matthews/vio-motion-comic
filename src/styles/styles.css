@@ -15,13 +15,4 @@ body {
 .bubbles {
   position: absolute;
   z-index: 30;
-}
-
-html {
-  -ms-scroll-snap-type: y proximity;
-      scroll-snap-type: y proximity;
-}
-
-.snap-child {
-  scroll-snap-align: center;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Rive from 'rive-react';
+import { useRive } from 'rive-react';
 
-export default function SlideRight({ img, delayNum, rive }) {
+export default function SlideRight({ img, delayNum, isRive }) {
     const controls = useAnimation();
     if (delayNum === undefined)
         delayNum = 0;
@@ -13,8 +13,17 @@ export default function SlideRight({ img, delayNum, rive }) {
         rootMargin: '500px 0px 0px 0px'
     });
 
+    const { rive, RiveComponent} = useRive({
+        src: img,
+        autoplay: true,
+        animations: "anim"
+    })
+
     useEffect(() => {
         if (inView) {
+            // if (isRive) 
+            //     rive.play()
+
             controls.start({
                 x: 0,
                 transition: {
@@ -32,9 +41,9 @@ export default function SlideRight({ img, delayNum, rive }) {
 
     return (
         <div ref={ref}>
-            <motion.div animate={controls} style={{border: '4px solid #354856'}}>
-                {rive 
-                    ? <Rive src={img} />
+            <motion.div animate={controls} style={{border: '8px solid #354856'}}>
+                {isRive 
+                    ? <RiveComponent />
                     : <img src={img} alt="" style={{ maxWidth: '100%' }} />
                 }
             </motion.div>
