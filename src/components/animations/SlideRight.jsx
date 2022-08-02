@@ -21,8 +21,8 @@ export default function SlideRight({ img, delayNum, isRive }) {
 
     useEffect(() => {
         if (inView) {
-            // if (isRive) 
-            //     rive.play()
+            if (isRive && rive) 
+                rive.play()
 
             controls.start({
                 x: 0,
@@ -36,8 +36,10 @@ export default function SlideRight({ img, delayNum, isRive }) {
         }
         if (!inView) {
             controls.start({ x: '100vw' });
+            if (isRive && rive) 
+                rive.reset();
         }
-    }, [inView]);
+    }, [inView, rive]);
 
     return (
         <div ref={ref} className="hover">
