@@ -36,7 +36,7 @@ export default function PageOne() {
     return (
         <Container fluid className="my-5 py-5">
             <Row className="my-2 hover">
-                <div style={{border: '8px solid #354856'}} className="panel-0">
+                <div className="panel-0">
                     <Rive src="page1/panel-1.riv"/>
                 </div>
             </Row>
@@ -63,15 +63,15 @@ export default function PageOne() {
                         <div className="bubbles" style={{ left: '700px', top: '300px' }}>
                             <Appear img="page1/bubble-4.png" delayNum="4.5" />
                         </div>
-                        <Col lg="4" className="mt-2">
-                            <SlideRight img="page1/panel-4.jpg" />
+                        <Col lg="4" className="mt-3 canvas-panel-4">
+                            <SlideRight img="page1/panel-4.riv" isRive="true" noBorder="true" />
                         </Col>
 
                         <Col>
-                            <Row className="mt-2">
+                            <Row className="mt-3">
                                 <SlideRight img="page1/panel-5.jpg" delayNum="0.2" />
                             </Row>
-                            <Row className="mt-2">
+                            <Row className="mt-3">
                                 <SlideRight img="page1/panel-6.jpg" delayNum="4.7" />
                             </Row>
                         </Col>

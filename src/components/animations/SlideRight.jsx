@@ -3,7 +3,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRive } from 'rive-react';
 
-export default function SlideRight({ img, delayNum, isRive }) {
+export default function SlideRight({ img, delayNum, isRive, noBorder }) {
     const controls = useAnimation();
     if (delayNum === undefined)
         delayNum = 0;
@@ -43,7 +43,7 @@ export default function SlideRight({ img, delayNum, isRive }) {
 
     return (
         <div ref={ref} className="hover">
-            <motion.div animate={controls} style={{border: '8px solid #354856'}}>
+            <motion.div animate={controls} style={{border: noBorder ? '' : '8px solid #354856'  }}>
                 {isRive 
                     ? <RiveComponent />
                     : <img src={img} alt="" style={{ maxWidth: '100%' }} />

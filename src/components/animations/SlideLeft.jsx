@@ -22,8 +22,6 @@ export default function SlideLeft({ img, delayNum, isRive }) {
         animations: "anim"
     })
 
-    console.log(rive)
-
     useEffect(() => {
         if (inView) {
             if (isRive && rive) 

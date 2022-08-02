@@ -9,11 +9,15 @@ body {
 }
 
 .canvas-pg-1 canvas {
-  height: 409px;
+  height: 408.5px;
 }
 
 .panel-0 canvas {
-  height: 580px;
+  height: 550px;
+}
+
+.canvas-panel-4 canvas {
+  height: 820px;
 }
 
 .bubbles {
