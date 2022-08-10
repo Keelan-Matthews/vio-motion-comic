@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useRive } from 'rive-react';
+import useSound from 'use-sound';
 
-export default function Appear({ img, delayNum }) {
+export default function Appear({ img, delayNum, isRive, sound }) {
+
+    const [play, { stop }] = useSound(sound);
+
     const controls = useAnimation();
     if (delayNum === undefined)
         delayNum = 0;
@@ -12,10 +17,27 @@ export default function Appear({ img, delayNum }) {
         rootMargin: '500px 900px 0px 500px'
     });
 
+    const { rive, RiveComponent } = useRive({
+        src: img,
+        autoplay: false,
+        animations: "anim"
+    })
+
+    function handleHover() {
+        if (sound) play();
+        if (isRive && rive) {
+            rive.reset();
+            rive.play()
+        }
+    }
+
     useEffect(() => {
         if (inView) {
+            if (isRive && rive)
+                rive.play()
+
             controls.start({
-                scale: 1, 
+                scale: 1,
                 opacity: 1,
                 transition: {
                     type: 'spring',
@@ -26,13 +48,19 @@ export default function Appear({ img, delayNum }) {
             });
         }
         if (!inView) {
+            if (sound) stop();
             controls.start({ scale: 0, opacity: 0 });
+            if (isRive && rive)
+                rive.reset();
         }
-    }, [inView]);
+    }, [inView, rive]);
     return (
-        <div ref={ref}>
+        <div ref={ref} style={{ height: '100%' }} onMouseEnter={() => handleHover()} onMouseLeave={() => stop()}>
             <motion.div animate={controls}>
-                <img src={img} alt="" style={{ maxWidth: '100%' }} />
+                {isRive
+                    ? <RiveComponent />
+                    : <img src={img} alt="" style={{ maxWidth: '100%' }} />
+                }
             </motion.div>
         </div>
     )

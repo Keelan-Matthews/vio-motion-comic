@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRive } from 'rive-react';
+import useSound from 'use-sound';
 
-export default function SlideRight({ img, delayNum, isRive, noBorder }) {
+export default function SlideRight({ img, delayNum, isRive, noBorder, sound }) {
+    
+    const [play, { stop }] = useSound(sound);
+    
     const controls = useAnimation();
     if (delayNum === undefined)
         delayNum = 0;
@@ -18,6 +22,14 @@ export default function SlideRight({ img, delayNum, isRive, noBorder }) {
         autoplay: true,
         animations: "anim"
     })
+
+    function handleHover() {
+        if (sound) play();
+        if (isRive && rive) {
+            rive.reset();
+            rive.play()
+        }
+    }
 
     useEffect(() => {
         if (inView) {
@@ -35,6 +47,8 @@ export default function SlideRight({ img, delayNum, isRive, noBorder }) {
             });
         }
         if (!inView) {
+            if (sound) stop();
+
             controls.start({ x: '100vw' });
             if (isRive && rive) 
                 rive.reset();
@@ -42,7 +56,7 @@ export default function SlideRight({ img, delayNum, isRive, noBorder }) {
     }, [inView, rive]);
 
     return (
-        <div ref={ref} className="hover">
+        <div ref={ref} className="hover" style={{ height: '100%' }} onMouseEnter={() => handleHover()} onMouseLeave={() => stop()}>
             <motion.div animate={controls} style={{border: noBorder ? '' : '8px solid #354856'  }}>
                 {isRive 
                     ? <RiveComponent />

@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRive } from 'rive-react';
+import useSound from 'use-sound';
 
-export default function SlideLeft({ img, delayNum, isRive }) {
+export default function SlideLeft({ img, delayNum, isRive, noBorder, sound }) {
+
+    const [play, { stop }] = useSound(sound);
+
     const controls = useAnimation();
     if (delayNum === undefined)
         delayNum = 0;
@@ -16,17 +20,25 @@ export default function SlideLeft({ img, delayNum, isRive }) {
         rootMargin: '500px 0px 0px 0px'
     });
 
-    const { rive, RiveComponent} = useRive({
+    const { rive, RiveComponent } = useRive({
         src: img,
         autoplay: false,
         animations: "anim"
     })
 
+    function handleHover() {
+        if (sound) play();
+        if (isRive && rive) {
+            rive.reset();
+            rive.play()
+        }
+    }
+
     useEffect(() => {
         if (inView) {
-            if (isRive && rive) 
+            if (isRive && rive)
                 rive.play()
-                
+
             controls.start({
                 x: 0,
                 transition: {
@@ -38,16 +50,18 @@ export default function SlideLeft({ img, delayNum, isRive }) {
             });
         }
         if (!inView) {
+            if (sound) stop();
+
             controls.start({ x: '-100vw' });
-            if (isRive && rive) 
+            if (isRive && rive)
                 rive.reset();
         }
     }, [inView, rive]);
 
     return (
-        <div ref={ref} className="hover">
-            <motion.div animate={controls} style={{border: '8px solid #354856'}}>
-                {isRive 
+        <div ref={ref} className="hover" style={{ height: '100%' }} onMouseEnter={() => handleHover()} onMouseLeave={() => stop()}>
+            <motion.div animate={controls} style={{border: noBorder ? '' : '8px solid #354856'  }}>
+                {isRive
                     ? <RiveComponent />
                     : <img src={img} alt="" style={{ maxWidth: '100%' }} />
                 }

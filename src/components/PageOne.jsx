@@ -42,10 +42,10 @@ export default function PageOne() {
             </Row>
             <Row className="d-flex">
                 <Col lg="7" className="canvas-pg-1">
-                    <SlideLeft img="page1/panel-2.riv" isRive="true" />
+                    <SlideLeft img="page1/panel-2.riv" isRive="true" sound="audio/page1/panel-2.mp3" />
                 </Col>
                 <Col lg="5" className="canvas-pg-1">
-                    <SlideRight img="page1/panel-3.riv" delayNum="1" isRive="true" />
+                    <SlideRight img="page1/panel-3.riv" delayNum="1" isRive="true" sound="audio/page1/panel-3.mp3" />
                 </Col>
             </Row>
             <div ref={ref}>
@@ -64,7 +64,7 @@ export default function PageOne() {
                             <Appear img="page1/bubble-4.png" delayNum="4.5" />
                         </div>
                         <Col lg="4" className="mt-3 canvas-panel-4">
-                            <SlideRight img="page1/panel-4.riv" isRive="true" noBorder="true" />
+                            <SlideRight img="page1/panel-4.riv" isRive="true" noBorder="true" sound="audio/page1/panel-4.mp3" />
                         </Col>
 
                         <Col>
