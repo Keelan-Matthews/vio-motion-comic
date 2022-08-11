@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import SlideRight from './animations/SlideRight';
 import SlideLeft from './animations/SlideLeft';
 import Appear from './animations/Appear';
-import Rive from "rive-react"
 
 export default function PageTwo() {
 
