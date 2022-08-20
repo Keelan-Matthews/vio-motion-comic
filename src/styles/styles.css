@@ -32,6 +32,10 @@ body {
   height: 500px;
 }
 
+.p2p7 canvas {
+  height: 375px;
+}
+
 .bubbles {
   position: absolute;
   z-index: 30;
