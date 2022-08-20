@@ -6,7 +6,9 @@
 
 :root {
 	--glitch-background: url("page2/panel-8.png");
+	--glitch-background-2: url("page3/panel-4.png");
 	--glitch-visible: 0%;
+	--glitch-visible2: 0%;
 }
 
 body {
@@ -39,6 +41,37 @@ body {
 
 .p2p7 canvas {
 	height: 375px;
+}
+
+.p3p2 canvas {
+	height: 457px;
+}
+
+.p3p4 canvas {
+	height: 820px;
+}
+
+.p3p4 {
+	position: relative;
+	animation: glitch1 2.5s infinite;
+}
+
+.p3p4:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--glitch-background-2);
+	background-size: var(--glitch-visible2);
+	opacity: .2;
+	mix-blend-mode: hard-light;
+	animation: hueGlitch .2s linear infinite;
+}
+
+.p3p4:hover {
+	--glitch-visible2: 100%;
 }
 
 .bubbles {
