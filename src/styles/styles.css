@@ -85,7 +85,6 @@ main {
   mix-blend-mode: hard-light;
   -webkit-animation: hueGlitch 0.2s linear infinite;
           animation: hueGlitch 0.2s linear infinite;
-  z-index: 1000;
 }
 
 .p2p8:hover {
