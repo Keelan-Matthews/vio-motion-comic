@@ -20,6 +20,7 @@ function App() {
 			<div className="container">
 				<PageOne />
 				<div className='page-gap'></div>
+				
 				<div ref={ref}>
 					<PageTwo />
 				</div>
