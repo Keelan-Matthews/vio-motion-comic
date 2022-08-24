@@ -9,13 +9,13 @@ export default function PageThree() {
     return (
         <Container fluid className="mt-5 py-5">
             <Row className="my-2">
-                <Col>
-                    <SlideRight img="page4/panel-1.jpg" />
+                <Col className='p4p1'>
+                    <SlideRight img="page4/panel-1.riv" isRive="true" />
                 </Col>
             </Row>
             <Row className="my-2">
-                <Col>
-                    <SlideRight img="page4/panel-2.jpg" noBorder="true" />
+                <Col className='p4p2'>
+                    <SlideRight img="page4/panel-2.riv" isRive="true" noBorder="true" />
                 </Col>
             </Row>
         </Container>
