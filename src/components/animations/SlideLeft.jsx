@@ -59,7 +59,7 @@ export default function SlideLeft({ img, delayNum, isRive, noBorder, sound }) {
     }, [inView, rive]);
 
     return (
-        <div ref={ref} className="hover" style={{ height: '100%' }} onMouseEnter={() => handleHover()} onMouseLeave={() => stop()}>
+        <div ref={ref} className="hover" style={{ height: '100%' }} onClick={() => handleHover()} onMouseLeave={() => stop()}>
             <motion.div animate={controls} style={{border: noBorder ? '' : '8px solid #354856'  }}>
                 {isRive
                     ? <RiveComponent />

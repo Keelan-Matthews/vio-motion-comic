@@ -55,7 +55,7 @@ export default function Appear({ img, delayNum, isRive, sound }) {
         }
     }, [inView, rive]);
     return (
-        <div ref={ref} style={{ height: '100%' }} onMouseEnter={() => handleHover()} onMouseLeave={() => stop()}>
+        <div ref={ref} style={{ height: '100%' }} onClick={() => handleHover()} onMouseLeave={() => stop()}>
             <motion.div animate={controls}>
                 {isRive
                     ? <RiveComponent />

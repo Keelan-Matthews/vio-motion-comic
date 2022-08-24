@@ -39,7 +39,7 @@ export default function PageTwo() {
                     <SlideRight img="page2/panel-7.riv" isRive="true" delayNum="1" sound="audio/page2/panel-7.mp3" />
                 </Col>
             </Row>
-            <Row className="my-2 p2p8" onMouseEnter={() => play()} onMouseLeave={() => stop()}>
+            <Row className="my-2 p2p8" onClick={() => play()} onMouseLeave={() => stop()}>
                 <Appear img="page2/panel-8.riv" isRive="true" />
             </Row>
         </Container>

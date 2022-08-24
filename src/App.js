@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PageOne from './components/PageOne'
 import PageTwo from './components/PageTwo'
 import PageThree from './components/PageThree';
+import PageFour from './components/PageFour';
 import { useInView } from "react-intersection-observer"
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
 				<div className='page-gap d-flex justify-content-center align-items-center'>
 					<h1 className='display-3 fw-bold text-white'>The night of the presentation...</h1>
 				</div>
+
+				<PageFour />
 			</div>
 		</main>
 	);

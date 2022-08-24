@@ -13,8 +13,8 @@ export default function SlideRight({ img, delayNum, isRive, noBorder, sound }) {
         delayNum = 0;
 
     const [ref, inView] = useInView({
-        threshold: 1,
-        rootMargin: '500px 0px 0px 0px'
+        threshold: 0.8,
+        rootMargin: '700px 0px 0px 0px'
     });
 
     const { rive, RiveComponent} = useRive({
@@ -56,7 +56,7 @@ export default function SlideRight({ img, delayNum, isRive, noBorder, sound }) {
     }, [inView, rive]);
 
     return (
-        <div ref={ref} className="hover" style={{ height: '100%' }} onMouseEnter={() => handleHover()} onMouseLeave={() => stop()}>
+        <div ref={ref} className="hover" style={{ height: '100%' }} onClick={() => handleHover()} onMouseLeave={() => stop()}>
             <motion.div animate={controls} style={{border: noBorder ? '' : '8px solid #354856'  }}>
                 {isRive 
                     ? <RiveComponent />

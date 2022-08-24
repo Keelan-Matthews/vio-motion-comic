@@ -25,7 +25,7 @@ export default function PageThree() {
                     <SlideLeft img="page3/panel-3.jpg" />
                 </Col>
             </Row>
-            <Row className="my-2" onMouseEnter={() => play()} onMouseLeave={() => stop()}>
+            <Row className="my-2" onClick={() => play()} onMouseLeave={() => stop()}>
                 <Col className='p3p4'>
                     <Appear img="page3/panel-4.riv" isRive="true" />
                 </Col>
