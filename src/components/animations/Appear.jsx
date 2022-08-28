@@ -55,8 +55,12 @@ export default function Appear({ img, delayNum, isRive, sound }) {
         }
     }, [inView, rive]);
     return (
-        <div ref={ref} style={{ height: '100%' }} onClick={() => handleHover()} onMouseLeave={() => stop()}>
+        <div ref={ref} className="position-relative" style={{ height: '100%' }} onClick={() => handleHover()} onMouseLeave={() => stop()}>
             <motion.div animate={controls}>
+                {sound
+                    ? <img src="volume.svg" alt="" className="position-absolute ps-2 pt-2" width="30" />
+                    : ''
+                }
                 {isRive
                     ? <RiveComponent />
                     : <img src={img} alt="" style={{ maxWidth: '100%' }} />

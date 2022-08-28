@@ -52,7 +52,7 @@ export default function PageOne() {
                 <motion.div animate={controls}>
                     <Row className='position-relative'>
                         <div className="bubbles" style={{ left: '300px', top: '300px' }}>
-                            <Appear img="page1/bubble-1.png" delayNum="1" sound="audio/page1/panel-4-bubble.mp3" />
+                            <Appear img="page1/bubble-1.png" delayNum="1" />
                         </div>
                         <div className="bubbles" style={{ left: '540px', top: '-30px' }}>
                             <Appear img="page1/bubble-2.png" delayNum="2" />
