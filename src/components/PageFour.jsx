@@ -14,7 +14,7 @@ export default function PageThree() {
                 </Col>
             </Row>
             <Row className="my-2">
-                <Col className='p4p2'>
+                <Col className='p4p2 sight'>
                     <SlideRight img="page4/panel-2.riv" isRive="true" noBorder="true" />
                 </Col>
             </Row>

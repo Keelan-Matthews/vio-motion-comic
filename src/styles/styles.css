@@ -59,6 +59,14 @@ body {
   height: 1000px;
 }
 
+.sight {
+  cursor: url("sight.png"), pointer;
+}
+
+.p2p5 canvas {
+  height: 320px;
+}
+
 .p3p4 {
   position: relative;
   -webkit-animation: glitch1 2.5s infinite;

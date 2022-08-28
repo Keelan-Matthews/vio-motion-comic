@@ -27,8 +27,8 @@ export default function PageTwo() {
                 <Col>
                     <SlideLeft img="page2/panel-4.jpg" sound="audio/page2/panel-4.mp3" />
                 </Col>
-                <Col>
-                    <SlideRight img="page2/panel-5.jpg" delayNum="1" />
+                <Col className="p2p5">
+                    <SlideRight img="page2/panel-5.riv" isRive="true" delayNum="1" noBorder="true" />
                 </Col>
             </Row>
             <Row className="my-4">
