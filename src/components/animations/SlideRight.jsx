@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useRive, useStateMachineInput } from 'rive-react';
+import { useRive } from 'rive-react';
 import useSound from 'use-sound';
 
-export default function SlideRight({ img, delayNum, isRive, stateMachine, noBorder, sound }) {
+export default function SlideRight({ img, delayNum, isRive, noBorder, sound }) {
 
     const [play, { stop }] = useSound(sound);
 
@@ -17,28 +17,24 @@ export default function SlideRight({ img, delayNum, isRive, stateMachine, noBord
         rootMargin: '700px 0px 0px 0px'
     });
 
-    const rivParam = stateMachine ? {src: img, autoplay: true, stateMachines: "statemachine"} : {src: img, autoplay: true, animations: "anim"};
-
-    const { rive, RiveComponent } = useRive(rivParam);
-
-    const trigger = stateMachine ? useStateMachineInput(rive,"statemachine","anim") : null;
+    const { rive, RiveComponent } = useRive({
+        src: img, 
+        autoplay: true, 
+        animations: "anim"
+    });
 
     function handleHover() {
         if (sound) play();
         if (isRive && rive) {
             rive.reset();
-            rive.play()
+            rive.play();
         }
     }
 
-    const [play1, { stop1 }] = useSound("audio/page4/gunshot.mp3");
     useEffect(() => {
         if (inView) {
             if (isRive && rive) {
-                rive.play()
-                rive.on('statechange', () => {
-                    play1();
-                });
+                rive.play();
             }
 
             controls.start({
