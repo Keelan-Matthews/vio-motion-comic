@@ -540,4 +540,8 @@ main {
     transform: none;
     opacity: 0.25;
   }
+}
+.border-black {
+  border: 1px solid black;
+  transform: translateX(40px);
 }/*# sourceMappingURL=styles.css.map */
