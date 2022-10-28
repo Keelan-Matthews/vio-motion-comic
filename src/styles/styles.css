@@ -544,4 +544,23 @@ main {
 .border-black {
   border: 1px solid black;
   transform: translateX(40px);
+}
+
+.scroll-line {
+  height: 170px;
+  border-left: 2px solid black;
+  transition: 1s ease-in-out;
+}
+.scroll-line.hide {
+  height: 0px;
+}
+
+.scroll-down-text {
+  opacity: 1;
+  width: 130px;
+  transform: rotate(90deg);
+  transition: 1s ease-in-out;
+}
+.scroll-down-text.hide {
+  opacity: 0;
 }/*# sourceMappingURL=styles.css.map */
