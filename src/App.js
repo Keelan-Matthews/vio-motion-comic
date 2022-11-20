@@ -27,7 +27,7 @@ function App() {
 		<main className={`${light ? "" : "bg-dark"}`}>
 			<div className="d-flex justify-content-between align-items-center">
 				<div className="m-5 p-2 px-3 border-black d-inline-block">
-					<a href="https://keelanmatthews.com/projects" className='text-decoration-none text-dark'>Go back</a>
+					<a href="https://keelanmatthews.com/projects" className='text-decoration-none'>Go back</a>
 				</div>
 				<p className='text-dark fs-1 me-5'>02</p>
 			</div>

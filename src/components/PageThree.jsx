@@ -27,7 +27,7 @@ export default function PageThree() {
             </Row>
             <Row className="my-2" onClick={() => play()} onMouseLeave={() => stop()}>
                 <Col className='p3p4'>
-                    <Appear img="page3/panel-4.riv" isRive="true" />
+                    <Appear img="page3/panel-4.riv" isRive="true" sound={true} />
                 </Col>
             </Row>
         </Container>

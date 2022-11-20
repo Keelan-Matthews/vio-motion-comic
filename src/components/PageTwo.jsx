@@ -40,7 +40,7 @@ export default function PageTwo() {
                 </Col>
             </Row>
             <Row className="my-2 p2p8" onClick={() => play()} onMouseLeave={() => stop()}>
-                <Appear img="page2/panel-8.riv" isRive="true" />
+                <Appear img="page2/panel-8.riv" isRive="true" sound={true} />
             </Row>
         </Container>
     )

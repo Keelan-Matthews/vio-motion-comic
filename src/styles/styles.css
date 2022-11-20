@@ -544,6 +544,16 @@ main {
 .border-black {
   border: 1px solid black;
   transform: translateX(40px);
+  transition: 0.3s ease-in-out;
+}
+.border-black a {
+  color: black;
+}
+.border-black:hover {
+  background-color: black;
+}
+.border-black:hover a {
+  color: white;
 }
 
 .scroll-line {
